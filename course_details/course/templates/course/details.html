@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+        div.gallery {
+          margin: 5px;
+          border: 1px solid #ccc;
+          float: left;
+          width: 30%;
+        }
+        
+        div.gallery:hover {
+          border: 1px solid #777;
+        }
+        
+        div.gallery img {
+          width: 100%;
+          height: auto;
+        }
+        
+        div.desc {
+          padding: 2%;
+          text-align: left;
+        }
+        .container {
+              position: relative;
+              text-align: center;
+              color: black;
+            }
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        </style>
+    </head>
+    <body>
+    <center>
+        <h1>COURSE DETAILS</h1>
+        <a href="/course/about" class="badge badge-secondary">ABOUT</a>
+        <a href="/course/insert_data" class="badge badge-primary">CLICK ME TO INSERT DATA</a>
+    </center>
+    <hr>
+    {% if details %}
+        {% for each_data in details %}
+            <div class="gallery">
+            {% static 'course/images' as base_url %}
+                <img src="{{base_url}}/{{each_data.image}}" alt="Cinque Terre" width="600" height="400">
+                <div class="desc">
+                    <strong>{{ each_data.course_name}}</strong><br>
+                    Author:{{ each_data.course_author_name}}<br>
+                    Price:{{ each_data.price}}$ only
+                </div>
+            </div>
+            <!-- {{ each_data.course_name}}
+            {{ each_data.course_author_name}}
+            {{ each_data.price}} -->
+        {% endfor %}
+    {% else %}
+        <div class="container">
+            <center><img src="{% static 'course/images/G01.jpg' %}" style="width:60%;height:50%;"></center>
+<!--             <div class="centered"><marquee bgcolor="white" width = 100%><h1>PARKING LOT</h1></marquee> -->
+        </div>
+        </div>
+        <center><h3>No data found</h3></center><br>
+    {% endif %}
+    <br>
+    
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

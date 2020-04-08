@@ -1,0 +1,26 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">   
+    </head>
+    <body>
+        <a href="/course/get_course_data" class="badge badge-primary">HOME</a>
+        <h1>ABOUT THE PROJECT</h1>
+        <ul type="square">
+            <li>Create a backend server in Python/Django.
+                Provide an API to store Course Information (Course Name, Course Author Name and Price).
+            </li>
+            <li>Use the API to store multiple courses.</li>
+            <li>Develop an API to fetch the list of courses provided.</li>
+            <li>Develop a Web page that uses the API in step 3 to show the list of courses. Web page should be
+mobile responsive.</li>
+            <li>Show data in grid of 3.
+        </ul>
+            <center><img src="{% static 'course/images/G01.jpg' %}" style="width:60%;height:50%;"></center>
+            
+        
+    </body>
+</html>
